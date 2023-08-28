@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../src/header.h"
+#include "../header.h"
 
 void	check_a_stack_bis(t_stack **a, t_data *data)
 {

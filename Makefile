@@ -11,23 +11,23 @@
 # **************************************************************************** #
 
 NAME	= push_swap
-SRCS	= src/main.c				\
-	  src/utils.c				\
-	  src/manage_stacks.c			\
-	  src/manage_stacks_bis.c		\
-	  src/push_swap.c			\
-	  src/rotate.c				\
-	  gt_n_index_method/index_method.c	\
-	  gt_n_index_method/index_method_bis.c	\
-	  gt_n_index_method/index_method_ter.c	\
-	  gt_n_index_method/gt_method.c		\
-	  gt_n_index_method/gt_method_bis.c	\
-	  gt_n_index_method/gt_method_ter.c	\
-	  gt_n_index_method/gt_method_quat.c	\
-	  gt_n_index_method/gt_method_quint.c	\
-	  gt_n_index_method/gt_method_six.c	\
-	  gt_n_index_method/check_a_stacks.c	\
-	  gt_n_index_method/check_b_stacks.c		
+SRCS	= src/main.c					\
+	  src/utils.c					\
+	  src/manage_stacks.c				\
+	  src/manage_stacks_bis.c			\
+	  src/push_swap.c				\
+	  src/rotate.c					\
+	  src/gt_n_index_method/index_method.c		\
+	  src/gt_n_index_method/index_method_bis.c	\
+	  src/gt_n_index_method/index_method_ter.c	\
+	  src/gt_n_index_method/gt_method.c		\
+	  src/gt_n_index_method/gt_method_bis.c		\
+	  src/gt_n_index_method/gt_method_ter.c		\
+	  src/gt_n_index_method/gt_method_quat.c	\
+	  src/gt_n_index_method/gt_method_quint.c	\
+	  src/gt_n_index_method/gt_method_six.c		\
+	  src/gt_n_index_method/check_a_stacks.c	\
+	  src/gt_n_index_method/check_b_stacks.c		
 OBJS	= $(SRCS:.c=.o)
 CC	= cc
 CFLAGS	= -Wall -Wextra -Werror -fsanitize=address

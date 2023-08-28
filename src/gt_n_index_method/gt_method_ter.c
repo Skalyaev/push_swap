@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../src/header.h"
+#include "../header.h"
 
 int	get_a_gap_gt(t_stack **a, t_stack *start, t_stack *end, t_data *data)
 {

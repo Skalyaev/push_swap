@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../src/header.h"
+#include "../header.h"
 
 void	check_for_rotate_bis(t_stack **a, t_stack *start,
 	t_stack *end, t_data *data)
