@@ -12,19 +12,19 @@
 
 #include "../../include/header.h"
 
-int	get_stack_size(t_stack *stack)
+int get_stack_size(t_stack *stack)
 {
-	int		i;
-	t_stack	*index;
+        int i;
+        t_stack *index;
 
-	i = 0;
-	index = stack;
-	while (index->prev)
-		index = index->prev;
-	while (index)
-	{
-		i++;
-		index = index->next;
-	}
-	return (i);
+        i = 0;
+        index = stack;
+        while (index->prev)
+                index = index->prev;
+        while (index)
+        {
+                i++;
+                index = index->next;
+        }
+        return (i);
 }

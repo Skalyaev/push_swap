@@ -12,27 +12,27 @@
 
 #include "../../include/header.h"
 
-int	error(t_stack **a, t_stack **b, long long *nb)
+int error(t_stack **a, t_stack **b, long long *nb)
 {
-	ft_putstr_fd("Error\n", 2);
-	if (a)
-		free_stack(a);
-	if (b)
-		free_stack(a);
-	if (nb)
-		free(nb);
-	return (-1);
+        ft_putstr_fd("Error\n", 2);
+        if (a)
+                free_stack(a);
+        if (b)
+                free_stack(a);
+        if (nb)
+                free(nb);
+        return (-1);
 }
 
-int	check_neg(char **av, int j, int i)
+int check_neg(char **av, int j, int i)
 {
-	if (av[j][i] == '-')
-	{
-		if (i != 0)
-			return (0);
-		if (!av[j][i + 1])
-			return (0);
-		return (1);
-	}
-	return (0);
+        if (av[j][i] == '-')
+        {
+                if (i != 0)
+                        return (0);
+                if (!av[j][i + 1])
+                        return (0);
+                return (1);
+        }
+        return (0);
 }
