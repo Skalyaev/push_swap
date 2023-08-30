@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "../../include/header.h"
 
 void	gap_finded_gt(t_data *data)
 {

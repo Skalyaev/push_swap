@@ -1,63 +1,65 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: anguinau <constantasg@gmail.com>           +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/25 15:53:25 by anguinau          #+#    #+#              #
-#    Updated: 2022/03/03 08:53:36 by anguinau         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME		= push_swap
 
-NAME	= push_swap
-SRCS	= src/main.c					\
-	  src/utils.c					\
-	  src/manage_stacks.c				\
-	  src/manage_stacks_bis.c			\
-	  src/push_swap.c				\
-	  src/rotate.c					\
-	  src/gt_n_index_method/index_method.c		\
-	  src/gt_n_index_method/index_method_bis.c	\
-	  src/gt_n_index_method/index_method_ter.c	\
-	  src/gt_n_index_method/gt_method.c		\
-	  src/gt_n_index_method/gt_method_bis.c		\
-	  src/gt_n_index_method/gt_method_ter.c		\
-	  src/gt_n_index_method/gt_method_quat.c	\
-	  src/gt_n_index_method/gt_method_quint.c	\
-	  src/gt_n_index_method/gt_method_six.c		\
-	  src/gt_n_index_method/check_a_stacks.c	\
-	  src/gt_n_index_method/check_b_stacks.c		
-OBJS	= $(SRCS:.c=.o)
-CC	= cc
-CFLAGS	= -Wall -Wextra -Werror -fsanitize=address
-RM	= rm -f
-LIB	= Libft/libft.a
+CC		= gcc
+CFLAGS		= -Wall -Wextra -Werror -fsanitize=address
 
-.c.o			:
-				${CC} ${CFLAGS} -c $< -o ${<:.c=.o} 
+INCLUDE_DIR	= include
+HEADER_EXT	= h
+HEADER		= $(shell find $(INCLUDE_DIR) -type f -name "*.$(HEADER_EXT)")
+HEADER_COUNT	= $(shell find $(INCLUDE_DIR) -type f -name "*.$(HEADER_EXT)" | wc -l)
+LIB		= Libft/libft.a
 
-all			:	${NAME}
-					
-make_libft		:
-				cd Libft && make
+SRC_DIR		= src
+SRC_EXT		= c
+SRC_COUNT	= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)" | wc -l)
+SRC		= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)")
 
-clean_libft		:
-				cd Libft && make clean
+OBJ_DIR		= obj
+OBJ_SUBDIR	= $(shell find $(SRC_DIR) -type d | grep '/' | sed 's/$(SRC_DIR)/$(OBJ_DIR)/g')
+OBJ		= $(subst $(SRC_DIR),$(OBJ_DIR),$(SRC:.$(SRC_EXT)=.o))
+
+RM		= rm -rf
+
+all		: ${NAME}
+
+ifeq ($(HEADER_COUNT), 1)
+ifeq ($(SRC_COUNT), 17)
+${NAME}		: make_libft $(OBJ_DIR) $(OBJ_SUBDIR) ${OBJ}
+		${CC} ${CFLAGS} ${OBJ} -L. ${LIB} -o ${NAME}
+else
+$(NAME)		:
+		@echo "Srcs corrupted, aborting"
+endif
+else
+$(NAME)		:
+		@echo "Srcs corrupted, aborting"
+endif
+
+make_libft	:
+		cd Libft && make
+
+clean_libft	:
+		cd Libft && make clean
 
 fclean_libft	:
-				cd Libft && make fclean
+		cd Libft && make fclean
 
-${NAME}			:	make_libft ${OBJS}
-				${CC} ${CFLAGS} -o ${NAME} ${OBJS} -L. ${LIB}
+$(OBJ_DIR)	:
+		@mkdir $(OBJ_DIR)
 
-clean			:	clean_libft
-				${RM} ${OBJS}
+$(OBJ_SUBDIR)	:
+		@mkdir $(OBJ_SUBDIR)
 
-fclean			:	clean fclean_libft
-				${RM} ${NAME}
+$(OBJ_DIR)/%.o	: $(SRC_DIR)/%.$(SRC_EXT)
+		$(CC) $(CFLAGS) -c $< -o $(<:.$(SRC_EXT)=.o)
+		@mv $(SRC_DIR)/*/*.o $@
 
-re			:	fclean all
-				make clean
+clean		: clean_libft
+		${RM} ${OBJ_DIR}
 
-.PHONY			:	all clean fclean re
+fclean		: clean fclean_libft
+		${RM} ${NAME}
+
+re		: fclean all
+
+.PHONY		: all bonus clean fclean re

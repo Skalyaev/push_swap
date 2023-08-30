@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "../../include/header.h"
 
 int	prepare_fake_a_gt(t_data *data)
 {

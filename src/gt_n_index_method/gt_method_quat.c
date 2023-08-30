@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "../../include/header.h"
 
 int	realign_gt(t_stack **a, t_stack *start, t_stack *end, t_data *data)
 {
