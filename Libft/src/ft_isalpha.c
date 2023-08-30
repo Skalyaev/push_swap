@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Return positif si C correspond à un caractère alphabétique, sinon 0
-
 #include "../include/libft.h"
 
-int	ft_isalpha(int c)
+int ft_isalpha(int c)
 {
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+        return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
 }

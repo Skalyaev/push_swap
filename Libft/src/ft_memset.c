@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Remplis N octets de S par C, puis return S
-
 #include "../include/libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void *ft_memset(void *s, int c, size_t n)
 {
-	char	*str;
+        char *str;
 
-	str = s;
-	while (n--)
-		*str++ = c;
-	return (s);
+        str = s;
+        while (n--)
+                *str++ = c;
+        return (s);
 }

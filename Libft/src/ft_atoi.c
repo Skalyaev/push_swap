@@ -10,28 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Return un int à partir d'un char* spécifique
-
 #include "../include/libft.h"
 
-int	ft_atoi(const char *nptr)
+int ft_atoi(const char *nptr)
 {
-	int	nbr;
-	int	neg;
+        int nbr;
+        int neg;
 
-	nbr = 0;
-	neg = 1;
-	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\r'
-		|| *nptr == '\v' || *nptr == '\f')
-		nptr += 1;
-	if (*nptr == '+' || *nptr == '-')
-		if (*nptr++ == '-')
-			neg = -neg;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		nbr *= 10;
-		nbr += (int)*nptr - 48;
-		nptr += 1;
-	}
-	return (nbr * neg);
+        nbr = 0;
+        neg = 1;
+        while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\r' || *nptr == '\v' || *nptr == '\f')
+                nptr += 1;
+        if (*nptr == '+' || *nptr == '-')
+                if (*nptr++ == '-')
+                        neg = -neg;
+        while (*nptr >= '0' && *nptr <= '9')
+        {
+                nbr *= 10;
+                nbr += (int)*nptr - 48;
+                nptr += 1;
+        }
+        return (nbr * neg);
 }

@@ -10,24 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Malloc STR de sizeof(char) * size + 1
-
 #include "../include/libft.h"
 
-int	malloc_str(char **str, int size)
+int malloc_str(char **str, int size)
 {
-	*str = malloc(sizeof(char) * size + 1);
-	if (!*str)
-		return (0);
-	(*str)[size] = '\0';
-	return (1);
+        *str = malloc(sizeof(char) * size + 1);
+        if (!*str)
+                return (0);
+        (*str)[size] = '\0';
+        return (1);
 }
 
-int	malloc_str_tab(char ***str, int size)
+int malloc_str_tab(char ***str, int size)
 {
-	*str = (char **)malloc(sizeof(char *) * (size + 1));
-	if (!*str)
-		return (0);
-	(*str)[size] = NULL;
-	return (1);
+        *str = (char **)malloc(sizeof(char *) * (size + 1));
+        if (!*str)
+                return (0);
+        (*str)[size] = NULL;
+        return (1);
 }

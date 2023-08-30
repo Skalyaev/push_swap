@@ -10,28 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Return un long long à partir d'un char* spécifique
-
 #include "../include/libft.h"
 
-long long	ft_long_long_atoi(const char *nptr)
+long long ft_long_long_atoi(const char *nptr)
 {
-	long long	nbr;
-	int			neg;
+        long long nbr;
+        int neg;
 
-	nbr = 0;
-	neg = 1;
-	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\r'
-		|| *nptr == '\v' || *nptr == '\f')
-		nptr += 1;
-	if (*nptr == '+' || *nptr == '-')
-		if (*nptr++ == '-')
-			neg = -neg;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		nbr *= 10;
-		nbr += (int)*nptr - 48;
-		nptr += 1;
-	}
-	return (nbr * neg);
+        nbr = 0;
+        neg = 1;
+        while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\r' || *nptr == '\v' || *nptr == '\f')
+                nptr += 1;
+        if (*nptr == '+' || *nptr == '-')
+                if (*nptr++ == '-')
+                        neg = -neg;
+        while (*nptr >= '0' && *nptr <= '9')
+        {
+                nbr *= 10;
+                nbr += (int)*nptr - 48;
+                nptr += 1;
+        }
+        return (nbr * neg);
 }

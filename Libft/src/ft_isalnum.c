@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Return positif si C correspond à un caractère alphanumérique, sinon 0
-
 #include "../include/libft.h"
 
-int	ft_isalnum(int c)
+int ft_isalnum(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+        return (ft_isalpha(c) || ft_isdigit(c));
 }

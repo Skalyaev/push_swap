@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Echange les valeurs int de ptr1 et ptr2
-
 #include "../include/libft.h"
 
-int	ft_swap(int *ptr1, int *ptr2)
+int ft_swap(int *ptr1, int *ptr2)
 {
-	int	temp;
+        int temp;
 
-	temp = *ptr1;
-	*ptr1 = *ptr2;
-	*ptr2 = temp;
-	return (1);
+        temp = *ptr1;
+        *ptr1 = *ptr2;
+        *ptr2 = temp;
+        return (1);
 }
