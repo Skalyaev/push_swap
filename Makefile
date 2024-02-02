@@ -7,7 +7,7 @@ INCLUDE_DIR	= include
 HEADER_EXT	= h
 HEADER		= $(shell find $(INCLUDE_DIR) -type f -name "*.$(HEADER_EXT)")
 HEADER_COUNT	= $(shell find $(INCLUDE_DIR) -type f -name "*.$(HEADER_EXT)" | wc -l)
-LIB		= Libft/libft.a
+LIB		= libft/libft.a
 
 SRC_DIR		= src
 SRC_EXT		= c
@@ -36,13 +36,13 @@ $(NAME)		:
 endif
 
 make_libft	:
-		cd Libft && make
+		cd libft && make
 
 clean_libft	:
-		cd Libft && make clean
+		cd libft && make clean
 
 fclean_libft	:
-		cd Libft && make fclean
+		cd libft && make fclean
 
 $(OBJ_DIR)	:
 		@mkdir $(OBJ_DIR)

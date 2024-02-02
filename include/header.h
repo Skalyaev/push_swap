@@ -13,84 +13,84 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include "../Libft/include/libft.h"
+#include "../libft/include/libft.h"
 
 typedef struct s_parsing
 {
-        long long *nb;
-        int j;
+    long long *nb;
+    int j;
 } t_parsing;
 
 typedef struct s_stack
 {
-        int nb;
-        int index;
-        int mark;
-        struct s_stack *next;
-        struct s_stack *prev;
+    int nb;
+    int index;
+    int mark;
+    struct s_stack *next;
+    struct s_stack *prev;
 } t_stack;
 
 typedef struct s_chunk
 {
-        int end_index;
-        struct s_chunk *next;
-        struct s_chunk *prev;
+    int end_index;
+    struct s_chunk *next;
+    struct s_chunk *prev;
 } t_chunk;
 
 typedef struct s_data
 {
-        int size;
-        int ret;
-        int temp_mark_count;
-        int mark_count;
-        int stop_loop;
-        int a_min;
-        int a_max;
-        int b_min;
-        int b_max;
-        int b_swap_needed;
-        int b_push_needed;
-        int b_rot_needed;
-        int b_r_rot_needed;
-        int a_swap_needed;
-        int a_push_needed;
-        int a_rot_needed;
-        int a_r_rot_needed;
-        int to_raw;
-        int a_ready;
-        int b_ready;
-        int b_unascending;
-        int head_index_nb;
-        int a_gap_start_nb;
-        int a_gap_end_nb;
-        int fill_gap_head_nb;
-        int b_max_index;
-        int moves_count;
-        int offset;
-        int up;
-        int down;
-        int apply;
-        int rot;
-        t_stack *a;
-        t_stack *fake_a;
-        t_stack *b;
-        t_stack *a_gap_start;
-        t_stack *a_gap_end;
-        t_stack *fill_gap_head;
-        t_stack *a_start;
-        t_stack *fake_a_start;
-        t_stack *b_start;
-        t_stack *a_end;
-        t_stack *fake_a_end;
-        t_stack *b_end;
-        t_stack *head_index;
-        t_stack *i;
-        t_stack *j;
-        t_stack *prev;
-        t_stack *next;
-        t_stack *end;
-        t_stack *temp;
-        t_stack *index;
+    int size;
+    int ret;
+    int temp_mark_count;
+    int mark_count;
+    int stop_loop;
+    int a_min;
+    int a_max;
+    int b_min;
+    int b_max;
+    int b_swap_needed;
+    int b_push_needed;
+    int b_rot_needed;
+    int b_r_rot_needed;
+    int a_swap_needed;
+    int a_push_needed;
+    int a_rot_needed;
+    int a_r_rot_needed;
+    int to_raw;
+    int a_ready;
+    int b_ready;
+    int b_unascending;
+    int head_index_nb;
+    int a_gap_start_nb;
+    int a_gap_end_nb;
+    int fill_gap_head_nb;
+    int b_max_index;
+    int moves_count;
+    int offset;
+    int up;
+    int down;
+    int apply;
+    int rot;
+    t_stack *a;
+    t_stack *fake_a;
+    t_stack *b;
+    t_stack *a_gap_start;
+    t_stack *a_gap_end;
+    t_stack *fill_gap_head;
+    t_stack *a_start;
+    t_stack *fake_a_start;
+    t_stack *b_start;
+    t_stack *a_end;
+    t_stack *fake_a_end;
+    t_stack *b_end;
+    t_stack *head_index;
+    t_stack *i;
+    t_stack *j;
+    t_stack *prev;
+    t_stack *next;
+    t_stack *end;
+    t_stack *temp;
+    t_stack *index;
 } t_data;
 
 int add_member(t_stack **stack);
