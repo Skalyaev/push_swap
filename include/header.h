@@ -13,7 +13,7 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include "../libft/include/libft.h"
+#include "libft.h"
 
 typedef struct s_parsing
 {

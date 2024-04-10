@@ -72,7 +72,7 @@ int check_input(int ac, char **av, long long *nb)
                 while (av[j][++i])
                         if (!ft_isdigit(av[j][i]) && !check_neg(av, j, i))
                                 return (0);
-                nb[j - 1] = ft_long_long_atoi(av[j]);
+                nb[j - 1] = ft_atoi(av[j]);
                 if (nb[j - 1] < -2147483648 || nb[j - 1] > 2147483647)
                         return (0);
                 i = -1;
@@ -98,7 +98,7 @@ int check_single_arg(int ac, char **av)
                 while (av[1][++i])
                         if (!ft_isdigit(av[1][i]) && !check_neg(av, 1, i))
                                 return (error(NULL, NULL, NULL));
-                nb = ft_long_long_atoi(av[1]);
+                nb = ft_atoi(av[1]);
                 if (nb < -2147483648 || nb > 2147483647)
                         return (error(NULL, NULL, NULL));
         }

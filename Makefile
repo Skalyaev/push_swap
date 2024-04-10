@@ -1,65 +1,45 @@
-NAME		= push_swap
+NAME=pushswap
 
-CC		= gcc
-CFLAGS		= -Wall -Wextra -Werror -fsanitize=address
+CC=gcc
+CFLAGS=-Wall -Wextra -Werror
 
-INCLUDE_DIR	= include
-HEADER_EXT	= h
-HEADER		= $(shell find $(INCLUDE_DIR) -type f -name "*.$(HEADER_EXT)")
-HEADER_COUNT	= $(shell find $(INCLUDE_DIR) -type f -name "*.$(HEADER_EXT)" | wc -l)
-LIB		= libft/libft.a
+INCLUDE_DIR=include
+HEADER_EXT=h
+HEADER=$(shell find $(INCLUDE_DIR) -type f -name "*.$(HEADER_EXT)")
 
-SRC_DIR		= src
-SRC_EXT		= c
-SRC_COUNT	= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)" | wc -l)
-SRC		= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)")
+SRC_EXT=c
+SRC_DIR=src
+SRC=$(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)")
 
-OBJ_DIR		= obj
-OBJ_SUBDIR	= $(shell find $(SRC_DIR) -type d | grep '/' | sed 's/$(SRC_DIR)/$(OBJ_DIR)/g')
-OBJ		= $(subst $(SRC_DIR),$(OBJ_DIR),$(SRC:.$(SRC_EXT)=.o))
+OBJ_DIR=obj
+OBJ_SUBDIR= $(shell find $(SRC_DIR) -type d | grep '/' | sed 's/$(SRC_DIR)/$(OBJ_DIR)/g')
+OBJ=$(subst $(SRC_DIR),$(OBJ_DIR),$(SRC:.c=.o))
 
-RM		= rm -rf
+LIB=./lib -lft
 
-all		: ${NAME}
+RM=rm -rf
 
-ifeq ($(HEADER_COUNT), 1)
-ifeq ($(SRC_COUNT), 17)
-${NAME}		: make_libft $(OBJ_DIR) $(OBJ_SUBDIR) ${OBJ}
-		${CC} ${CFLAGS} ${OBJ} -L. ${LIB} -o ${NAME}
-else
-$(NAME)		:
-		@echo "Srcs corrupted, aborting"
-endif
-else
-$(NAME)		:
-		@echo "Srcs corrupted, aborting"
-endif
+all: ${NAME}
 
-make_libft	:
-		cd libft && make
+${NAME}: $(OBJ_DIR) $(OBJ_SUBDIR) ${OBJ}
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME} -L ${LIB}
 
-clean_libft	:
-		cd libft && make clean
+$(OBJ_DIR):
+	@mkdir $(OBJ_DIR)
 
-fclean_libft	:
-		cd libft && make fclean
+$(OBJ_SUBDIR):
+	@mkdir $(OBJ_SUBDIR)
 
-$(OBJ_DIR)	:
-		@mkdir $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT) ${HEADER}
+	$(CC) $(CFLAGS) -c $< -o $(<:.$(SRC_EXT)=.o)
+	@mv $(SRC_DIR)/*/*.o $@
 
-$(OBJ_SUBDIR)	:
-		@mkdir $(OBJ_SUBDIR)
+clean:
+	${RM} ${OBJ_DIR}
 
-$(OBJ_DIR)/%.o	: $(SRC_DIR)/%.$(SRC_EXT)
-		$(CC) $(CFLAGS) -c $< -o $(<:.$(SRC_EXT)=.o)
-		@mv $(SRC_DIR)/*/*.o $@
+fclean: clean
+	${RM} ${NAME}
 
-clean		: clean_libft
-		${RM} ${OBJ_DIR}
+re: fclean all
 
-fclean		: clean fclean_libft
-		${RM} ${NAME}
-
-re		: fclean all
-
-.PHONY		: all bonus clean fclean re
+.PHONY: all clean fclean re
