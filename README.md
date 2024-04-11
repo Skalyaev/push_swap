@@ -30,7 +30,7 @@ Trier des valeurs est simple, mais les trier le plus rapidement possible est plu
 | rrr | rra et rrb en même temps |
 
 ## Preview
-![](https://github.com/Skalyaeve/images/blob/main/screenshot/pushswap.gif)
+![](https://github.com/Skalyaeve/images-1/blob/main/screenshot/pushswap.gif)
 > Visualieur [ici](https://gitlab.com/hydrasho/visualizer-push-swap)
 
 ## Install
