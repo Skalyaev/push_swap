@@ -1,39 +1,33 @@
-# Push_swap
-> *Ce projet vous demande de trier des données dans une pile en utilisant un ensemble limité d'instructions, et avec le moins d'opérations possibles. Pour le réussir, vous devrez manipuler différents algorithmes de tri et choisir la solution la plus appropriée pour un classement optimal des données.*
-
-Les algorithmes de tri et leur complexité sont des sujets classiques lors des entretiens d'embauche. Profitez de cette occasion pour approfondir sérieusement vos connaissances.
-
-Les objectifs de ce projet incluent la rigueur, la pratique du langage C et l'utilisation d'algorithmes élémentaires, en particulier la compréhension de leur complexité.
-
-Trier des valeurs est simple, mais les trier le plus rapidement possible est plus complexe, car un même algorithme de tri peut ne pas être le plus efficace d'une configuration d'entiers à une autre.
+# <p align="center">push_swap</p>
+> *Ce projet vous demande de trier des données dans une pile en utilisant un ensemble limité d'instructions, et avec le moins d'opérations possibles.*
+> 
+> *Pour le réussir, vous devrez manipuler différents algorithmes de tri et choisir la solution la plus appropriée pour un classement optimal des données.*
+>
+> *Les algorithmes de tri et leur complexité sont des sujets classiques lors des entretiens d'embauche. Profitez de cette occasion pour approfondir sérieusement vos connaissances.*
+>
+> *Les objectifs de ce projet incluent la rigueur, la pratique du langage C et l'utilisation d'algorithmes élémentaires, en particulier la compréhension de leur complexité.*
+>
+> *Trier des valeurs est simple, mais les trier le plus rapidement possible est plus complexe, car un même algorithme de tri peut ne pas être le plus efficace d'une configuration d'entiers à une autre.*
 
 | Instruction | Description |
-|-|-|
-| sa (swap a) | Intervertit les 2 premiers éléments au sommet de la pile a |
-| Ne fait rien s’il n’y en a qu’un ou aucun |
-| sb (swap b ) | Intervertit les 2 premiers éléments au sommet de la pile b |
-| Ne fait rien s’il n’y en a qu’un ou aucun |
-| ss | sa et sb en même temps |
-| pa (push a) | Prend le premier élément au sommet de b et le met sur a |
-| Ne fait rien si b est vide |
-| pb (push b) | Prend le premier élément au sommet de a et le met sur b |
-| Ne fait rien si a est vide |
-| ra (rotate a) | Décale d’une position vers le haut tous les élements de la pile a |
-| Le premier élément devient le dernier |
-| rb (rotate b) | Décale d’une position vers le haut tous les élements de la pile b |
-| Le premier élément devient le dernier |
-| rr | ra et rb en même temps |
-| rra (reverse rotate a) | Décale d’une position vers le bas tous les élements de
-| la pile a. Le dernier élément devient le premier |
-| rrb (reverse rotate b) | Décale d’une position vers le bas tous les élements de
-| la pile b. Le dernier élément devient le premier |
-| rrr | rra et rrb en même temps |
+| - | :-: |
+| **`sa`** (swap a) | Intervertit les 2 premiers éléments au sommet de la pile a |
+| **`sb`** (swap b ) | Intervertit les 2 premiers éléments au sommet de la pile b |
+| **`ss`** | **`sa`** et **`sb`** en même temps |
+| **`pa`** (push a) | Prend le premier élément au sommet de b et le met sur a |
+| **`pb`** (push b) | Prend le premier élément au sommet de a et le met sur b |
+| **`ra`** (rotate a) | Le premier élément de la pile a devient le dernier |
+| **`rb`** (rotate b) | Le premier élément de la pile b devient le dernier |
+| **`rr`** | **`ra`** et **`rb`** en même temps |
+| **`rra`** (reverse rotate a) | Le dernier élément de la pile a devient le premier |
+| **`rrb`** (reverse rotate b) | Le dernier élément de la pile b devient le premier |
+| **`rrr`** | **`rra`** et **`rrb`** en même temps |
 
-## Preview
+## Aperçu
 ![](https://github.com/Skalyaeve/images-1/blob/main/screenshot/pushswap.gif)
 > Visualieur [ici](https://gitlab.com/hydrasho/visualizer-push-swap)
 
-## Install
+## Installer
 ```bash
 sudo apt update -y
 sudo apt install -y gcc
@@ -56,13 +50,13 @@ ln -s $PWD/src $HOME/.local/src/$name
 ln -s $PWD/include $HOME/.local/include/$name
 ```
 
-## Usage
+## Utiliser
 ```bash
 export PATH=$HOME/.local/bin:$PATH
 pushswap <numbers>
 ```
 
-## Uninstall
+## Désinstaller
 ```bash
 name=pushswap
 
