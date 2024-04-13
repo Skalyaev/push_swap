@@ -1,6 +1,6 @@
 # <p align="center">push_swap</p>
 > *Ce projet vous demande de trier des données dans une pile en utilisant un ensemble limité d'instructions, et avec le moins d'opérations possibles.*
-> 
+>
 > *Pour le réussir, vous devrez manipuler différents algorithmes de tri et choisir la solution la plus appropriée pour un classement optimal des données.*
 >
 > *Les algorithmes de tri et leur complexité sont des sujets classiques lors des entretiens d'embauche. Profitez de cette occasion pour approfondir sérieusement vos connaissances.*
@@ -23,11 +23,11 @@
 | **`rrb`** (reverse rotate b) | Le dernier élément de la pile b devient le premier |
 | **`rrr`** | **`rra`** et **`rrb`** en même temps |
 
-## Aperçu
+## Preview
 ![](https://github.com/Skalyaeve/images-1/blob/main/screenshot/pushswap.gif)
 > Visualieur [ici](https://gitlab.com/hydrasho/visualizer-push-swap)
 
-## Installer
+## Install
 ```bash
 sudo apt update -y
 sudo apt install -y gcc
@@ -43,25 +43,26 @@ link=Skalyaeve/push_swap
 name=pushswap
 
 git clone https://github.com/$link.git $name
-cd .. && make && make clean
+cd $name && make && make clean
 
 ln -s $PWD/$name $HOME/.local/bin/$name
 ln -s $PWD/src $HOME/.local/src/$name
 ln -s $PWD/include $HOME/.local/include/$name
 ```
 
-## Utiliser
+## Usage
 ```bash
 export PATH=$HOME/.local/bin:$PATH
 pushswap <numbers>
 ```
 
-## Désinstaller
+## Uninstall
 ```bash
 name=pushswap
 
-rm -r $name
+rm -rf $name
 rm $HOME/.local/bin/$name
 rm $HOME/.local/src/$name
 rm $HOME/.local/include/$name
 ```
+
