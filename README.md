@@ -39,10 +39,9 @@ mkdir -p $HOME/.local/src
 mkdir -p $HOME/.local/include
 ```
 ```bash
-link=Skalyaeve/push_swap
 name=pushswap
 
-git clone https://github.com/$link.git $name
+git clone https://github.com/Skalyaeve/push_swap.git $name
 cd $name && make && make clean
 
 ln -s $PWD/$name $HOME/.local/bin/$name
